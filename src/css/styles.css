@@ -16,3 +16,42 @@
 @import url('./badges.css');
 @import url('./back-link.css');
 @import url('./footer.css');
+
+
+/* Основные стили для списка ссылок */
+.link-list {
+  list-style: none; /* Убираем маркеры */
+  padding: 0; /* Убираем отступы */
+  margin: 0; /* Убираем внешние отступы */
+  display: flex; /* Располагаем элементы в строку */
+  flex-direction: column; /* Строки в колонку */
+}
+
+/* Стили для каждого элемента списка */
+.main-link {
+  margin: 10px 0; /* Отступы сверху и снизу */
+}
+
+/* Стили для ссылок */
+.main-link a {
+  text-decoration: none; /* Убираем подчеркивание */
+  color: #007bff; /* Цвет текста */
+  font-size: 1.2rem; /* Размер шрифта */
+  font-weight: bold; /* Жирный шрифт */
+  padding: 10px 15px; /* Внутренние отступы */
+  border-radius: 5px; /* Скругленные углы */
+  background-color: #f8f9fa; /* Цвет фона */
+  transition: background-color 0.3s, color 0.3s; /* Плавные переходы */
+}
+
+/* Стили для ссылок при наведении */
+.main-link a:hover {
+  background-color: #e9ecef; /* Цвет фона при наведении */
+  color: #0056b3; /* Цвет текста при наведении */
+}
+
+/* Стили для ссылок при активном состоянии */
+.main-link a:active {
+  background-color: #dee2e6; /* Цвет фона при клике */
+  color: #004085; /* Цвет текста при клике */
+}
