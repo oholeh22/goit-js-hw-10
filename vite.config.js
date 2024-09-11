@@ -10,6 +10,7 @@ export default defineConfig(({ command }) => {
       [command === 'serve' ? 'global' : '_global']: {},
     },
     root: 'src',
+    base: '/goit-js-hw-10/', 
     build: {
       sourcemap: true,
       rollupOptions: {
@@ -34,7 +35,7 @@ export default defineConfig(({ command }) => {
           },
         },
       },
-      outDir: '../dist',
+      outDir: '../dist', // Переконайтесь, що директорія збірки правильна
       emptyOutDir: true,
     },
     plugins: [
