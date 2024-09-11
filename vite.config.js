@@ -5,7 +5,7 @@ import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig({
-  base: '/vanilla-app-template/', // Додайте базову URL-адресу тут
+  base: '/goit-js-hw-10/', 
   root: 'src',
   build: {
     sourcemap: true,
