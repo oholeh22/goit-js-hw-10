@@ -18,40 +18,130 @@
 @import url('./footer.css');
 
 
-/* Основные стили для списка ссылок */
+
 .link-list {
-  list-style: none; /* Убираем маркеры */
-  padding: 0; /* Убираем отступы */
-  margin: 0; /* Убираем внешние отступы */
-  display: flex; /* Располагаем элементы в строку */
-  flex-direction: column; /* Строки в колонку */
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+  display: flex; 
+  flex-direction: column; 
 }
 
-/* Стили для каждого элемента списка */
+
 .main-link {
-  margin: 10px 0; /* Отступы сверху и снизу */
+  margin: 10px 0;
+  list-style: none; 
 }
 
-/* Стили для ссылок */
+
 .main-link a {
-  text-decoration: none; /* Убираем подчеркивание */
-  color: #007bff; /* Цвет текста */
-  font-size: 1.2rem; /* Размер шрифта */
-  font-weight: bold; /* Жирный шрифт */
-  padding: 10px 15px; /* Внутренние отступы */
-  border-radius: 5px; /* Скругленные углы */
-  background-color: #f8f9fa; /* Цвет фона */
-  transition: background-color 0.3s, color 0.3s; /* Плавные переходы */
+  text-decoration: none; 
+  color: #007bff; 
+  font-size: 1.2rem; 
+  font-weight: bold; 
+  padding: 5px 5px; 
+  border-radius: 5px; 
+  background-color: #f8f9fa; 
+  transition: background-color 0.3s, color 0.3s; 
 }
 
-/* Стили для ссылок при наведении */
+
 .main-link a:hover {
-  background-color: #e9ecef; /* Цвет фона при наведении */
-  color: #0056b3; /* Цвет текста при наведении */
+  background-color: #e9ecef; 
+  color: #0056b3; 
 }
 
-/* Стили для ссылок при активном состоянии */
+
 .main-link a:active {
-  background-color: #dee2e6; /* Цвет фона при клике */
-  color: #004085; /* Цвет текста при клике */
+  background-color: #dee2e6; 
+  color: #004085; 
 }
+
+
+.timer {
+  font-family: 'Arial', sans-serif; 
+  font-size: 2rem; 
+  color: #fff; 
+  background-color: #333; 
+  padding: 20px; 
+  border-radius: 15px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+  text-align: center; 
+  width: 200px; 
+  margin: 0 auto; 
+  letter-spacing: 0.05em; 
+}
+
+.timer:hover {
+  background-color: #555; 
+  transition: background-color 0.3s ease; 
+}
+
+#datetime-picker {
+  font-family: 'Arial', sans-serif; 
+  font-size: 1.2rem; 
+  color: #333; 
+  background-color: #f9f9f9; 
+  padding: 10px; 
+  border-radius: 10px; 
+  border: 2px solid #ccc; 
+  width: 100%; 
+  max-width: 300px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  margin: 10px auto; 
+  display: block; 
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+#datetime-picker:focus {
+  border-color: #555; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+
+.js-start {
+  font-family: 'Arial', sans-serif; 
+  font-size: 1.2rem; 
+  color: #fff; 
+  background-color: #333; 
+  padding: 10px 20px; 
+  border-radius: 10px; 
+  border: none; 
+  cursor: not-allowed; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  margin: 10px auto; 
+  display: block; 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.js-start:enabled {
+  background-color: #28a745; 
+  cursor: pointer; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.js-start:enabled:hover {
+  background-color: #218838; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f0f0f0 0%, #d9d9d9 50%, #bfbfbf 100%); 
+  min-height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px; 
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 15px; 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+}
+
