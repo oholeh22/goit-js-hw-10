@@ -1,39 +1,34 @@
-// Описаний у документації
 import iziToast from "izitoast";
-// Додатковий імпорт стилів
 import "izitoast/dist/css/iziToast.min.css";
 
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('promise-form');
+  const resultDiv = document.getElementById('result');
 
-const form = document.getElementById('promise-form');
-const resultDiv = document.getElementById('result');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-const makePromise = ({ delay, shouldResolve }) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (shouldResolve) {
-        resolve(`✅ Fulfilled promise in ${delay}ms`);
-      } else {
-        reject(`❌ Rejected promise in ${delay}ms`);
-      }
-    }, delay);
-  });
-};
+    const delay = Number(event.target.elements.delay.value);
+    const state = event.target.elements.state.value;
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault(); 
+    const shouldResolve = state === 'fulfilled';
 
-  const delay = Number(event.target.delay.value); 
-  const shouldResolve = event.target.shouldResolve.value === 'true'; 
-
-  
-  makePromise({ delay, shouldResolve })
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (shouldResolve) {
+          resolve(`✅ Fulfilled promise in ${delay}ms`);
+        } else {
+          reject(`❌ Rejected promise in ${delay}ms`);
+        }
+      }, delay);
+    })
     .then((message) => {
-      console.log(message); 
-      resultDiv.textContent = message; 
+      iziToast.success({ title: 'Success', message: message });
+      resultDiv.textContent = message;
     })
     .catch((error) => {
-      console.error(error); 
-      resultDiv.textContent = error; 
+      iziToast.error({ title: 'Error', message: error });
+      resultDiv.textContent = error;
     });
+  });
 });
-
